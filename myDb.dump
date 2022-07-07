@@ -1,0 +1,402 @@
+-- MySQL dump 10.13  Distrib 8.0.16, for osx10.12 (x86_64)
+--
+-- Host: 127.0.0.1    Database: myDb
+-- ------------------------------------------------------
+-- Server version	8.0.29
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+ SET NAMES utf8mb4 ;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `event`
+--
+
+DROP TABLE IF EXISTS `event`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `event` (
+  `id` int NOT NULL,
+  `name` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UK_mt8ulcc4k7fnc56rxaeu1sa33` (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `event`
+--
+
+LOCK TABLES `event` WRITE;
+/*!40000 ALTER TABLE `event` DISABLE KEYS */;
+INSERT INTO `event` VALUES (57,'$x*? TOUR'),(56,'$x*?amat'),(31,'2º'),(32,'ARRANGED'),(36,'CIH(BC)'),(34,'Corps I/O Heads'),(35,'CU'),(37,'DSW'),(38,'FIRE'),(39,'GENDER'),(40,'GENERATIONS'),(41,'HERE & NOW'),(42,'HOMELESSNESS'),(33,'LENS'),(45,'MALADJUSTED'),(46,'MALADJUSTED TOUR'),(43,'MAMU'),(44,'METH'),(48,'No `Xya`'),(49,'OOTS'),(50,'PD'),(51,'REACH'),(52,'Rec. Hope'),(53,'ROS'),(54,'SAFER'),(47,'SHATTERING (meth)'),(55,'SQEEGEE'),(58,'TDG'),(59,'THIR$TY'),(60,'US & THEM');
+/*!40000 ALTER TABLE `event` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `hibernate_sequence`
+--
+
+DROP TABLE IF EXISTS `hibernate_sequence`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `hibernate_sequence` (
+  `next_val` bigint DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `hibernate_sequence`
+--
+
+LOCK TABLES `hibernate_sequence` WRITE;
+/*!40000 ALTER TABLE `hibernate_sequence` DISABLE KEYS */;
+INSERT INTO `hibernate_sequence` VALUES (76);
+/*!40000 ALTER TABLE `hibernate_sequence` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `issue`
+--
+
+DROP TABLE IF EXISTS `issue`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `issue` (
+  `id` int NOT NULL,
+  `name` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UK_tkgoddmcchxv44mkisswqefpe` (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `issue`
+--
+
+LOCK TABLES `issue` WRITE;
+/*!40000 ALTER TABLE `issue` DISABLE KEYS */;
+INSERT INTO `issue` VALUES (61,'Addiction'),(62,'Anti-Racism'),(63,'Conflict-Res'),(64,'Environment'),(65,'First Nations'),(66,'Gender Roles'),(67,'Globalization'),(68,'Health'),(69,'Intergenerational'),(70,'Multiculturalism'),(71,'Poverty'),(73,'Violence-Family'),(72,'Violence-Schools'),(74,'Wellness'),(75,'Youth');
+/*!40000 ALTER TABLE `issue` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `mime`
+--
+
+DROP TABLE IF EXISTS `mime`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `mime` (
+  `id` int NOT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `area` varchar(255) DEFAULT NULL,
+  `city` varchar(255) DEFAULT NULL,
+  `company` varchar(255) DEFAULT NULL,
+  `country` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `first_name` varchar(255) DEFAULT NULL,
+  `job_title` varchar(255) DEFAULT NULL,
+  `last_name` varchar(255) DEFAULT NULL,
+  `notes` varchar(255) DEFAULT NULL,
+  `phone` varchar(255) DEFAULT NULL,
+  `phone_type` varchar(255) DEFAULT NULL,
+  `postal_code` int NOT NULL,
+  `province` varchar(255) DEFAULT NULL,
+  `url` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `mime`
+--
+
+LOCK TABLES `mime` WRITE;
+/*!40000 ALTER TABLE `mime` DISABLE KEYS */;
+/*!40000 ALTER TABLE `mime` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `mime_details`
+--
+
+DROP TABLE IF EXISTS `mime_details`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `mime_details` (
+  `accomodation` varchar(255) DEFAULT NULL,
+  `communicate_type` varchar(255) DEFAULT NULL,
+  `contract_date` datetime(6) DEFAULT NULL,
+  `counsellor` bit(1) NOT NULL,
+  `facilitator` varchar(255) DEFAULT NULL,
+  `join_date` datetime(6) DEFAULT NULL,
+  `leave_date` datetime(6) DEFAULT NULL,
+  `member` bit(1) NOT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `tfl_date` datetime(6) DEFAULT NULL,
+  `tfl_fee` varchar(255) DEFAULT NULL,
+  `tfl_focus` varchar(255) DEFAULT NULL,
+  `tfl_organizer` bit(1) NOT NULL,
+  `mime_id` int NOT NULL,
+  PRIMARY KEY (`mime_id`),
+  CONSTRAINT `FKb879sa5arratwdnixmlijixvt` FOREIGN KEY (`mime_id`) REFERENCES `mime` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `mime_details`
+--
+
+LOCK TABLES `mime_details` WRITE;
+/*!40000 ALTER TABLE `mime_details` DISABLE KEYS */;
+/*!40000 ALTER TABLE `mime_details` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `mime_details_associations`
+--
+
+DROP TABLE IF EXISTS `mime_details_associations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `mime_details_associations` (
+  `mime_details_mime_id` int NOT NULL,
+  `associations` varchar(255) DEFAULT NULL,
+  KEY `FK603v4dj8g88c4mhvwbexgiylo` (`mime_details_mime_id`),
+  CONSTRAINT `FK603v4dj8g88c4mhvwbexgiylo` FOREIGN KEY (`mime_details_mime_id`) REFERENCES `mime_details` (`mime_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `mime_details_associations`
+--
+
+LOCK TABLES `mime_details_associations` WRITE;
+/*!40000 ALTER TABLE `mime_details_associations` DISABLE KEYS */;
+/*!40000 ALTER TABLE `mime_details_associations` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `mime_details_events`
+--
+
+DROP TABLE IF EXISTS `mime_details_events`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `mime_details_events` (
+  `mime_details_mime_id` int NOT NULL,
+  `events_id` int NOT NULL,
+  PRIMARY KEY (`mime_details_mime_id`,`events_id`),
+  UNIQUE KEY `UK_3qxlya3uv3840nip60c8wlydy` (`events_id`),
+  CONSTRAINT `FK1x4tv3dwueerip4sahm7xi1p1` FOREIGN KEY (`events_id`) REFERENCES `event` (`id`),
+  CONSTRAINT `FK47io5x1vhe50y9lajcdk0whd0` FOREIGN KEY (`mime_details_mime_id`) REFERENCES `mime_details` (`mime_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `mime_details_events`
+--
+
+LOCK TABLES `mime_details_events` WRITE;
+/*!40000 ALTER TABLE `mime_details_events` DISABLE KEYS */;
+/*!40000 ALTER TABLE `mime_details_events` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `mime_details_infos_wanted`
+--
+
+DROP TABLE IF EXISTS `mime_details_infos_wanted`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `mime_details_infos_wanted` (
+  `mime_details_mime_id` int NOT NULL,
+  `infos_wanted` varchar(255) DEFAULT NULL,
+  KEY `FK66lxdkwvesgxch25tneihilin` (`mime_details_mime_id`),
+  CONSTRAINT `FK66lxdkwvesgxch25tneihilin` FOREIGN KEY (`mime_details_mime_id`) REFERENCES `mime_details` (`mime_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `mime_details_infos_wanted`
+--
+
+LOCK TABLES `mime_details_infos_wanted` WRITE;
+/*!40000 ALTER TABLE `mime_details_infos_wanted` DISABLE KEYS */;
+/*!40000 ALTER TABLE `mime_details_infos_wanted` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `mime_details_issues`
+--
+
+DROP TABLE IF EXISTS `mime_details_issues`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `mime_details_issues` (
+  `mime_details_mime_id` int NOT NULL,
+  `issues_id` int NOT NULL,
+  PRIMARY KEY (`mime_details_mime_id`,`issues_id`),
+  UNIQUE KEY `UK_ii2ndklif61ri3y5xc1meyyon` (`issues_id`),
+  CONSTRAINT `FKbk5ud53dcoant7k2d5xml8x8s` FOREIGN KEY (`issues_id`) REFERENCES `issue` (`id`),
+  CONSTRAINT `FKm9bewga2j2b44s17371vipm0k` FOREIGN KEY (`mime_details_mime_id`) REFERENCES `mime_details` (`mime_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `mime_details_issues`
+--
+
+LOCK TABLES `mime_details_issues` WRITE;
+/*!40000 ALTER TABLE `mime_details_issues` DISABLE KEYS */;
+/*!40000 ALTER TABLE `mime_details_issues` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `mime_details_organizations`
+--
+
+DROP TABLE IF EXISTS `mime_details_organizations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `mime_details_organizations` (
+  `mime_details_mime_id` int NOT NULL,
+  `organizations_id` int NOT NULL,
+  PRIMARY KEY (`mime_details_mime_id`,`organizations_id`),
+  UNIQUE KEY `UK_snxok75d6sglhas9havot9fdf` (`organizations_id`),
+  CONSTRAINT `FKdxahg1minnxwvpmvdrcwkjvg3` FOREIGN KEY (`organizations_id`) REFERENCES `organization` (`id`),
+  CONSTRAINT `FKg84uffiicd2t3nraoto07ejqt` FOREIGN KEY (`mime_details_mime_id`) REFERENCES `mime_details` (`mime_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `mime_details_organizations`
+--
+
+LOCK TABLES `mime_details_organizations` WRITE;
+/*!40000 ALTER TABLE `mime_details_organizations` DISABLE KEYS */;
+/*!40000 ALTER TABLE `mime_details_organizations` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `mime_details_roles`
+--
+
+DROP TABLE IF EXISTS `mime_details_roles`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `mime_details_roles` (
+  `mime_details_mime_id` int NOT NULL,
+  `roles_id` int NOT NULL,
+  PRIMARY KEY (`mime_details_mime_id`,`roles_id`),
+  UNIQUE KEY `UK_ky3owkboj1v8b051f1cs4oejn` (`roles_id`),
+  CONSTRAINT `FKog418126im124c91ud7u797bn` FOREIGN KEY (`mime_details_mime_id`) REFERENCES `mime_details` (`mime_id`),
+  CONSTRAINT `FKrxv3dnwhcrkg342h6uyxxdphq` FOREIGN KEY (`roles_id`) REFERENCES `role` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `mime_details_roles`
+--
+
+LOCK TABLES `mime_details_roles` WRITE;
+/*!40000 ALTER TABLE `mime_details_roles` DISABLE KEYS */;
+/*!40000 ALTER TABLE `mime_details_roles` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `mime_details_trainee_levels`
+--
+
+DROP TABLE IF EXISTS `mime_details_trainee_levels`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `mime_details_trainee_levels` (
+  `mime_details_mime_id` int NOT NULL,
+  `trainee_levels` varchar(255) DEFAULT NULL,
+  KEY `FKq29oqkycwddsx2ceu6er4qjfo` (`mime_details_mime_id`),
+  CONSTRAINT `FKq29oqkycwddsx2ceu6er4qjfo` FOREIGN KEY (`mime_details_mime_id`) REFERENCES `mime_details` (`mime_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `mime_details_trainee_levels`
+--
+
+LOCK TABLES `mime_details_trainee_levels` WRITE;
+/*!40000 ALTER TABLE `mime_details_trainee_levels` DISABLE KEYS */;
+/*!40000 ALTER TABLE `mime_details_trainee_levels` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `organization`
+--
+
+DROP TABLE IF EXISTS `organization`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `organization` (
+  `id` int NOT NULL,
+  `name` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UK_8j5y8ipk73yx2joy9yr653c9t` (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `organization`
+--
+
+LOCK TABLES `organization` WRITE;
+/*!40000 ALTER TABLE `organization` DISABLE KEYS */;
+INSERT INTO `organization` VALUES (12,'Church'),(27,'Community'),(13,'Culture'),(14,'Education'),(28,'Environment'),(15,'First Nations'),(24,'Government'),(16,'Health'),(19,'Media-Magazine'),(18,'Media-Newspaper'),(21,'Media-Other'),(20,'Media-Radio'),(17,'Media-TV'),(22,'Media-Web'),(23,'NGO'),(29,'PRESS RELEASE'),(25,'Theatre'),(26,'Union'),(30,'UofA FoMD');
+/*!40000 ALTER TABLE `organization` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `role`
+--
+
+DROP TABLE IF EXISTS `role`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+ SET character_set_client = utf8mb4 ;
+CREATE TABLE `role` (
+  `id` int NOT NULL,
+  `name` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UK_8sewwnpamngi6b1dwaa88askk` (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `role`
+--
+
+LOCK TABLES `role` WRITE;
+/*!40000 ALTER TABLE `role` DISABLE KEYS */;
+INSERT INTO `role` VALUES (1,'Board Member'),(2,'Donor'),(3,'Funder'),(4,'Network'),(5,'Participant'),(6,'Politician-Federal'),(8,'Politician-Municipal'),(7,'Politician-Provincial'),(11,'Supplier'),(9,'Volunteer'),(10,'Webcast');
+/*!40000 ALTER TABLE `role` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping routines for database 'myDb'
+--
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2022-07-07 19:25:59
