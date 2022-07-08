@@ -26,6 +26,7 @@
 .detailed {
     background-color: green;
     flex-basis: 55%;
+    /* width: 55%; */
 }
 
 .form-row {
@@ -48,4 +49,42 @@
 .form-row input[type=radio] {
     margin-right: 20%;
     margin-left: 5px;
+}
+
+.d-form-row {
+    display: flex;
+}
+
+
+.item {
+    margin: auto 10px
+}
+
+.item * {
+    margin: auto 1px
+}
+
+.mlabel {
+    font-weight: bold;
+    text-align: right;
+    flex-basis: 20%;
+    background-color: purple;
+    margin-right: 5px;
+}
+
+.field {
+    flex-basis: 90%;
+    background-color: aqua;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.ditem {
+    width: 185px;
+    font-size: small;
+}
+
+.bigtext {
+    flex-basis: 90%;
 }
