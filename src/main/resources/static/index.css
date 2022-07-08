@@ -6,7 +6,7 @@
 .container {
     display: flex;
     flex-direction: row;
-    background-color: grey;
+    /* background-color: grey; */
 }
 
 .container * {
@@ -16,7 +16,7 @@
 }
 
 .basic {
-    background-color: blue;
+    /* background-color: blue; */
     flex-basis: 45%;
     display: flex;
     flex-direction: column;
@@ -24,7 +24,7 @@
 }
 
 .detailed {
-    background-color: green;
+    /* background-color: green; */
     flex-basis: 55%;
     /* width: 55%; */
 }
@@ -68,13 +68,13 @@
     font-weight: bold;
     text-align: right;
     flex-basis: 20%;
-    background-color: purple;
+    /* background-color: purple; */
     margin-right: 5px;
 }
 
 .field {
     flex-basis: 90%;
-    background-color: aqua;
+    /* background-color: aqua; */
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -87,4 +87,24 @@
 
 .bigtext {
     flex-basis: 90%;
+}
+
+input[type=text], textarea {
+    border: 1px solid black;
+    border-top: hidden;
+    border-left: hidden;
+    outline: none
+}
+
+input[type=text]:focus, textarea:focus {
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+    padding: 3px 0px 3px 3px;
+    margin: 5px 1px 3px 0px;
+    border: 1px solid rgba(81, 203, 238, 1);
+    border-top: hidden;
+    border-left: hidden;
+}
+
+input[type=text]:disabled {
+    background-color: lightgrey;
 }
