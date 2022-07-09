@@ -6,11 +6,6 @@ window.onload = () => {
 
     document.getElementById("mime-form").addEventListener("submit", submitHandler)
 
-    const lastName = parseUrl() 
-    if(lastName) {
-        console.log(`Loading ${lastName} data`)
-        loadMimeData(lastName)
-    }
 }
 
 var parseUrl = () => {
@@ -41,7 +36,7 @@ var phoneBlurHandler = () => {
 }
 
 var getInitialData = () => {
-    fetch("http://localhost:8080/api/roles")
+    fetch("api/roles")
     .then(response => {
         if(!response.ok) {
             alert("Unable to fetch roles")
@@ -54,7 +49,7 @@ var getInitialData = () => {
         console.log(data)
         createBoxes("roles", data)
     });
-    fetch("http://localhost:8080/api/orgs")
+    fetch("api/orgs")
     .then(response => {
         if(!response.ok) {
             alert("Unable to fetch orgs")
@@ -67,7 +62,7 @@ var getInitialData = () => {
         console.log(data)
         createBoxes("orgs", data)
     });
-    fetch("http://localhost:8080/api/events")
+    fetch("api/events")
     .then(response => {
         if(!response.ok) {
             alert("Unable to fetch events")
@@ -80,7 +75,7 @@ var getInitialData = () => {
         console.log(data)
         createBoxes("events", data)
     });
-    fetch("http://localhost:8080/api/issues")
+    fetch("api/issues")
     .then(response => {
         if(!response.ok) {
             alert("Unable to fetch issues")
@@ -93,6 +88,13 @@ var getInitialData = () => {
         console.log(data)
         createBoxes("issues", data)
     });
+
+
+    const lastName = parseUrl() 
+    if(lastName) {
+        console.log(`Loading ${lastName} data`)
+        loadMimeData(lastName)
+    }
 }
 
 
@@ -163,7 +165,7 @@ const submitHandler = (e) => {
 
     console.log(body)
 
-    fetch("http://localhost:8080/api/mime", {
+    fetch("api/mime", {
         body: JSON.stringify(body),
         headers: {
             'Accept': 'application/json',
@@ -189,7 +191,7 @@ const getSelectedByName = (name) => {
 
 
 const loadMimeData = lastName => {
-    fetch(`http://localhost:8080/api/mime?lastName=${lastName}`)
+    fetch(`api/mime?lastName=${lastName}`)
     .then(response => {
         if(!response.ok) {
             alert("Unable to fetch mimedata")
