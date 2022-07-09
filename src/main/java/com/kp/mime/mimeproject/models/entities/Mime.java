@@ -1,13 +1,11 @@
 package com.kp.mime.mimeproject.models.entities;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
-
-import com.kp.mime.mimeproject.models.PhoneType;
 
 @Entity
 public class Mime {
@@ -16,10 +14,12 @@ public class Mime {
     @GeneratedValue
     private int id;
 
-    @OneToOne(mappedBy = "mime")
+    @OneToOne(mappedBy = "mime", cascade = CascadeType.ALL)
     private MimeDetails mimeDetails;
 
     private String firstName;
+
+    @Column(unique = true)
     private String lastName;
     private String jobTitle;
     private String company;
@@ -30,12 +30,23 @@ public class Mime {
     private String country;
     private String area;
     private String phone;
-    @Enumerated(EnumType.STRING)
-    private PhoneType phoneType;
+    private String phoneType;
     private String email;
     private String url;
     private String notes;
 
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
+    public MimeDetails getMimeDetails() {
+        return mimeDetails;
+    }
+    public void setMimeDetails(MimeDetails mimeDetails) {
+        this.mimeDetails = mimeDetails;
+    }
     public String getFirstName() {
         return firstName;
     }
@@ -102,10 +113,10 @@ public class Mime {
     public void setPhone(String phone) {
         this.phone = phone;
     }
-    public PhoneType getPhoneType() {
+    public String getPhoneType() {
         return phoneType;
     }
-    public void setPhoneType(PhoneType phoneType) {
+    public void setPhoneType(String phoneType) {
         this.phoneType = phoneType;
     }
     public String getEmail() {

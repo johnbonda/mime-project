@@ -1,20 +1,17 @@
 package com.kp.mime.mimeproject.models.entities;
 
 import java.time.LocalDateTime;
-import java.util.Set;
+import java.util.List;
 
 import javax.persistence.CollectionTable;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.MapsId;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
-import com.kp.mime.mimeproject.models.CommunicateType;
-import com.kp.mime.mimeproject.models.Status;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class MimeDetails {
@@ -24,6 +21,7 @@ public class MimeDetails {
 
     @OneToOne
     @MapsId
+    @JsonIgnore
     private Mime mime;
 
     private boolean member;
@@ -32,43 +30,40 @@ public class MimeDetails {
 
     @ElementCollection
     @CollectionTable
-    private Set<String> infosWanted;
+    private List<String> infoWanted;
 
-    @Enumerated(EnumType.STRING)
-    private CommunicateType communicateType;
+    private String communicate;
     
     @ElementCollection
     @CollectionTable
-    private Set<String> traineeLevels;
+    private List<String> traineeLevels;
 
     @ElementCollection
     @CollectionTable
-    private Set<String> associations;
+    private List<String> associations;
 
-    @OneToMany
-    private Set<Role> roles;
+    @ManyToMany
+    private List<Role> roles;
 
-    @OneToMany
-    private Set<Organization> organizations;
+    @ManyToMany
+    private List<Organization> orgs;
 
-    @OneToMany
-    private Set<Event> events;
+    @ManyToMany
+    private List<Event> events;
 
-    @OneToMany
-    private Set<Issue> issues;
+    @ManyToMany
+    private List<Issue> issues;
 
     private boolean tflOrganizer;
 
     private LocalDateTime contractDate;
-    private LocalDateTime tflDate;
+    private LocalDateTime tflDates;
     private String tflFocus;
     private String tflFee;
     private boolean counsellor;
     private String facilitator;
     private String accomodation;
-
-    @Enumerated(EnumType.STRING)
-    private Status status;
+    private String status;
 
     public int getId() {
         return id;
@@ -98,79 +93,79 @@ public class MimeDetails {
         return joinDate;
     }
 
-    public void setJoinDate(LocalDateTime joinDate) {
-        this.joinDate = joinDate;
+    public void setJoinDate(LocalDateTime join) {
+        this.joinDate = join;
     }
 
     public LocalDateTime getLeaveDate() {
         return leaveDate;
     }
 
-    public void setLeaveDate(LocalDateTime leaveDate) {
-        this.leaveDate = leaveDate;
+    public void setLeaveDate(LocalDateTime leave) {
+        this.leaveDate = leave;
     }
 
-    public Set<String> getInfosWanted() {
-        return infosWanted;
+    public List<String> getInfoWanted() {
+        return infoWanted;
     }
 
-    public void setInfosWanted(Set<String> infosWanted) {
-        this.infosWanted = infosWanted;
+    public void setInfoWanted(List<String> infoWanted) {
+        this.infoWanted = infoWanted;
     }
 
-    public CommunicateType getCommunicateType() {
-        return communicateType;
+    public String getCommunicate() {
+        return communicate;
     }
 
-    public void setCommunicateType(CommunicateType communicateType) {
-        this.communicateType = communicateType;
+    public void setCommunicate(String communicate) {
+        this.communicate = communicate;
     }
 
-    public Set<String> getTraineeLevels() {
+    public List<String> getTraineeLevels() {
         return traineeLevels;
     }
 
-    public void setTraineeLevels(Set<String> traineeLevels) {
+    public void setTraineeLevels(List<String> traineeLevels) {
         this.traineeLevels = traineeLevels;
     }
 
-    public Set<String> getAssociations() {
+    public List<String> getAssociations() {
         return associations;
     }
 
-    public void setAssociations(Set<String> associations) {
+    public void setAssociations(List<String> associations) {
         this.associations = associations;
     }
 
-    public Set<Role> getRoles() {
+    public List<Role> getRoles() {
         return roles;
     }
 
-    public void setRoles(Set<Role> roles) {
+    public void setRoles(List<Role> roles) {
         this.roles = roles;
     }
 
-    public Set<Organization> getOrganizations() {
-        return organizations;
+    public List<Organization> getOrgs() {
+        return orgs;
     }
 
-    public void setOrganizations(Set<Organization> organizations) {
-        this.organizations = organizations;
+    public void setOrgs(List<Organization> orgs) {
+        this.orgs = orgs;
     }
 
-    public Set<Event> getEvents() {
+    public List<Event> getEvents() {
         return events;
     }
 
-    public void setEvents(Set<Event> events) {
+    public void setEvents(List<Event> events) {
         this.events = events;
     }
 
-    public Set<Issue> getIssues() {
+    public List<Issue> getIssues() {
         return issues;
     }
 
-    public void setIssues(Set<Issue> issues) {
+    public void setIssues(List<Issue> issues) {
         this.issues = issues;
     }
 
@@ -190,12 +185,12 @@ public class MimeDetails {
         this.contractDate = contractDate;
     }
 
-    public LocalDateTime getTflDate() {
-        return tflDate;
+    public LocalDateTime getTflDates() {
+        return tflDates;
     }
 
-    public void setTflDate(LocalDateTime tflDate) {
-        this.tflDate = tflDate;
+    public void setTflDates(LocalDateTime tflDates) {
+        this.tflDates = tflDates;
     }
 
     public String getTflFocus() {
@@ -238,11 +233,11 @@ public class MimeDetails {
         this.accomodation = accomodation;
     }
 
-    public Status getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(Status status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 

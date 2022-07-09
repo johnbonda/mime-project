@@ -15,6 +15,10 @@ public class Organization {
     @Column(unique = true, nullable = false)
     private String name;
 
+    public Organization(int id) {
+        this.id = id;
+    }
+
     public Organization() {}
 
     public Organization(String name) {

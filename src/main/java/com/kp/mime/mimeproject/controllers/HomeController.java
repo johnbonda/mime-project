@@ -5,11 +5,17 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.kp.mime.mimeproject.MimeService;
+import com.kp.mime.mimeproject.models.MimeDTO;
 import com.kp.mime.mimeproject.models.entities.Event;
 import com.kp.mime.mimeproject.models.entities.Issue;
+import com.kp.mime.mimeproject.models.entities.Mime;
 import com.kp.mime.mimeproject.models.entities.Organization;
 import com.kp.mime.mimeproject.models.entities.Role;
 import com.kp.mime.mimeproject.repositories.EventRepository;
@@ -23,16 +29,19 @@ import com.kp.mime.mimeproject.repositories.RoleRepository;
 public class HomeController {
 
     @Autowired
-    private RoleRepository roleRepository;
+    RoleRepository roleRepository;
 
     @Autowired
-    private OrganizationRepository organizationRepository;
+    OrganizationRepository organizationRepository;
 
     @Autowired
-    private EventRepository eventRepository;
+    EventRepository eventRepository;
 
     @Autowired
-    private IssueRepository issueRepository;
+    IssueRepository issueRepository;
+
+    @Autowired
+    MimeService mimeService;
     
     @GetMapping
     public String helloWorld() {
@@ -57,6 +66,21 @@ public class HomeController {
     @GetMapping("/issues")
     public List<Issue> getIssues() {
         return issueRepository.findAll();
+    }
+
+    @PostMapping("/mime")
+    public void saveData(@RequestBody MimeDTO mimeDTO) {
+        mimeService.saveMime(mimeDTO);        
+    }
+
+    @GetMapping("/mime")
+    public Mime getMime(@RequestParam(required = true) String lastName) {
+        return mimeService.getMime(lastName);
+    }
+
+    @GetMapping("/getrolesid")
+    public List<Role> getRolesByIds(@RequestBody List<Integer> roles) {
+        return roleRepository.findByIdIn(roles);
     }
 
 }

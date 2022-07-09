@@ -15,6 +15,10 @@ public class Issue {
     @Column(unique = true, nullable = false)
     private String name;
 
+    public Issue(int id) {
+        this.id = id;
+    }
+
     public Issue() {}
 
     public Issue(String name) {
