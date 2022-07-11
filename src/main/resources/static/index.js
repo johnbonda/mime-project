@@ -36,7 +36,8 @@ var phoneBlurHandler = () => {
 }
 
 var getInitialData = () => {
-    fetch("api/roles")
+    let tasks = []
+    tasks.push(fetch("api/roles")
     .then(response => {
         if(!response.ok) {
             alert("Unable to fetch roles")
@@ -48,8 +49,8 @@ var getInitialData = () => {
     .then(data => {
         console.log(data)
         createBoxes("roles", data)
-    });
-    fetch("api/orgs")
+    }))
+    tasks.push(fetch("api/orgs")
     .then(response => {
         if(!response.ok) {
             alert("Unable to fetch orgs")
@@ -61,8 +62,8 @@ var getInitialData = () => {
     .then(data => {
         console.log(data)
         createBoxes("orgs", data)
-    });
-    fetch("api/events")
+    }))
+    tasks.push(fetch("api/events")
     .then(response => {
         if(!response.ok) {
             alert("Unable to fetch events")
@@ -74,8 +75,8 @@ var getInitialData = () => {
     .then(data => {
         console.log(data)
         createBoxes("events", data)
-    });
-    fetch("api/issues")
+    }))
+    tasks.push(fetch("api/issues")
     .then(response => {
         if(!response.ok) {
             alert("Unable to fetch issues")
@@ -87,13 +88,16 @@ var getInitialData = () => {
     .then(data => {
         console.log(data)
         createBoxes("issues", data)
-    });
+    }))
 
 
     const lastName = parseUrl() 
     if(lastName) {
-        console.log(`Loading ${lastName} data`)
-        loadMimeData(lastName)
+        Promise.all(tasks)
+        .then(() => {
+            console.log(`Loading ${lastName} data`)
+            loadMimeData(lastName)
+        })
     }
 }
 
