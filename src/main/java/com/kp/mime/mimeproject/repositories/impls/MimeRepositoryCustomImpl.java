@@ -16,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.kp.mime.mimeproject.models.Filter;
+import com.kp.mime.mimeproject.models.MimeShort;
 import com.kp.mime.mimeproject.models.entities.Mime;
 import com.kp.mime.mimeproject.models.entities.Role;
 import com.kp.mime.mimeproject.repositories.MimeRepositoryCustom;
@@ -31,9 +32,9 @@ public class MimeRepositoryCustomImpl implements MimeRepositoryCustom {
     private EntityManager em;
 
     @Override
-    public List<Mime> getMimesMatching(Filter filter) {
+    public List<MimeShort> getMimesMatching(Filter filter) {
         CriteriaBuilder cb = em.getCriteriaBuilder();
-        CriteriaQuery<Mime> cq = cb.createQuery(Mime.class);
+        CriteriaQuery<MimeShort> cq = cb.createQuery(MimeShort.class);
         Root<Mime> mime = cq.from(Mime.class);
         Path<List<Role>> rolesPath = mime.join("mimeDetails").get("roles");
         
@@ -49,7 +50,10 @@ public class MimeRepositoryCustomImpl implements MimeRepositoryCustom {
             .collect(Collectors.toList())
         );
 
-        cq.where(conditions.toArray(new Predicate[0]));
+        cq.multiselect(
+            mime.get("id"),
+            mime.get("lastName")
+        ).where(conditions.toArray(new Predicate[0]));
         return em.createQuery(cq).getResultList();
     }
 
