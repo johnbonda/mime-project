@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.kp.mime.mimeproject.MimeService;
+import com.kp.mime.mimeproject.models.Filter;
 import com.kp.mime.mimeproject.models.MimeDTO;
 import com.kp.mime.mimeproject.models.entities.Event;
 import com.kp.mime.mimeproject.models.entities.Issue;
@@ -89,8 +90,8 @@ public class HomeController {
     }
 
     @PostMapping("/getMimesMatching")
-    public List<Mime> getMimesMatching(@RequestBody Map<String, String> queries) {
-        return mimeRepository.getMimesMatching(queries);        
+    public List<Mime> getMimesMatching(@RequestBody Filter filter) {
+        return mimeRepository.getMimesMatching(filter);        
     }
 
 }
