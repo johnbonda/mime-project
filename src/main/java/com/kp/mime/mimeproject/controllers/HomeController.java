@@ -1,6 +1,7 @@
 package com.kp.mime.mimeproject.controllers;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -20,6 +21,7 @@ import com.kp.mime.mimeproject.models.entities.Organization;
 import com.kp.mime.mimeproject.models.entities.Role;
 import com.kp.mime.mimeproject.repositories.EventRepository;
 import com.kp.mime.mimeproject.repositories.IssueRepository;
+import com.kp.mime.mimeproject.repositories.MimeRepository;
 import com.kp.mime.mimeproject.repositories.OrganizationRepository;
 import com.kp.mime.mimeproject.repositories.RoleRepository;
 
@@ -42,6 +44,9 @@ public class HomeController {
 
     @Autowired
     MimeService mimeService;
+
+    @Autowired
+    MimeRepository mimeRepository;
     
     @GetMapping
     public String helloWorld() {
@@ -81,6 +86,11 @@ public class HomeController {
     @GetMapping("/getrolesid")
     public List<Role> getRolesByIds(@RequestBody List<Integer> roles) {
         return roleRepository.findByIdIn(roles);
+    }
+
+    @PostMapping("/getMimesMatching")
+    public List<Mime> getMimesMatching(@RequestBody Map<String, String> queries) {
+        return mimeRepository.getMimesMatching(queries);        
     }
 
 }
