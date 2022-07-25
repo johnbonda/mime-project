@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Mime Home</title>
+  <script src="home.js"></script>
+  <link rel="stylesheet" href="home.css">
+</head>
+<body>
+  <div class="filter-section">
+    <form id="filter-form">
+      <div class="main-filters">
+        <label>Queries:</label>
+        <span class="filter-fields">
+          <button type="button" onclick="addQuery()">Add Query</button>
+          <div class="queries-area" id="queries-area"></div>
+        </span>
+      <div class="main-filters">
+        <label>Roles:</label>
+        <span class="filter-fields">
+          <select name="roles-select" id="roles-select" onchange="roleSelectHandler(this.selectedIndex)">
+            <option value="none" >Select Role</option>
+          </select>
+          <span id="selected-roles"></span>
+        </span>
+      </div>
+      <button type="submit">Search</button>
+    </form>
+  </div>
+  <hr>
+  <div class="result-section">
+    <table id="filter-results" >
+      <caption>Filtered Results</caption>
+      <tr>
+        <th>ID</td>
+        <th>Last Name</td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>
