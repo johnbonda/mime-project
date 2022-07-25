@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
+  <a href="/user.html">Add new user</a>
   <div class="filter-section">
     <form id="filter-form">
       <div class="main-filters">
@@ -14,14 +15,15 @@
           <button type="button" onclick="addQuery()">Add Query</button>
           <div class="queries-area" id="queries-area"></div>
         </span>
+      </div>
       <div class="main-filters">
         <label>Roles:</label>
         <span class="filter-fields">
           <select name="roles-select" id="roles-select" onchange="roleSelectHandler(this.selectedIndex)">
             <option value="none" >Select Role</option>
           </select>
-          <span id="selected-roles"></span>
         </span>
+        <div id="selected-roles"></div>
       </div>
       <button type="submit">Search</button>
     </form>

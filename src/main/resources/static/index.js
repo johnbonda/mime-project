@@ -27,6 +27,7 @@ const roleSelectHandler = (index) => {
 
     if(selectedItem.value != "none" && !getSelectedRoles().includes(selectedItem.value)) {
         const selectedRole = document.createElement("label")
+        selectedRole.className = "clickable"
         selectedRole.setAttribute("value", selectedItem.value)
         selectedRole.innerHTML =selectedItem.outerText
         selectedRole.setAttribute("onclick", "this.remove()")
@@ -44,7 +45,7 @@ const getSelectedRoles = () => {
 }
 
 const loadRoleOptions = () => {
-    fetch("http://localhost:8080/api/roles")
+    fetch("/api/roles")
     .then(response => {
         if(!response.ok) {
             alert("Unable to fetch roles")
@@ -111,7 +112,7 @@ const submitHandler = (event) => {
     
     console.log("Searching", request)
 
-    fetch("http://localhost:8080/api/getMimesMatching", {
+    fetch("/api/getMimesMatching", {
         body: JSON.stringify(request),
         headers: {
             'Accept': 'application/json',
@@ -144,12 +145,16 @@ const showMimeResults = (results) => {
         tr.className = "filter-result"
         table.appendChild(tr)
         const td_id = document.createElement("td")
-        const td_name = document.createElement("td")
+        const td_lastName = document.createElement("td")
+        const lastNameAnchor = document.createElement("a")
+        lastNameAnchor.href = `/user.html?lastName=${result.lastName}`
+        lastNameAnchor.innerHTML = result.lastName
+
         tr.appendChild(td_id)
-        tr.appendChild(td_name)
+        tr.appendChild(td_lastName)
 
         td_id.innerHTML = result.id
-        td_name.innerHTML = result.lastName
+        td_lastName.appendChild(lastNameAnchor)
     })
 }
 
