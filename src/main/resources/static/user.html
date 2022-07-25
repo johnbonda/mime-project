@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Mime App</title>
+  <script src="user.js"></script>
+  <link rel="stylesheet" href="user.css">
+</head>
+
+<body>
+  <form id="mime-form">
+    <div class="container">
+      <div class="basic">
+        <div class="form-row">
+          <label class="mlabel" for="firstName lastName">First Last</label>
+          <input type="text" id="firstName" required>
+          <input type="text" id="lastName" required>
+        </div>
+        <div class="form-row">
+          <label class="mlabel" for="jobTitle">Job title</label>
+          <input type="text" id="jobTitle">
+        </div>
+        <div class="form-row">
+          <label class="mlabel" for="company">Company</label>
+          <input type="text" id="company">
+        </div>
+        <div class="form-row">
+          <label class="mlabel" for="address">Address</label>
+          <textarea id="address" cols="30" rows="2"></textarea>
+        </div>
+        <div class="form-row">
+          <label class="mlabel" for="city">City</label>
+          <input type="text" id="city">
+        </div>
+        <div class="form-row">
+          <label class="mlabel" for="province">Province</label>
+          <input type="text" id="province">
+        </div>
+        <div class="form-row">
+          <label class="mlabel" for="postalCode">Postal Code</label>
+          <input type="text" id="postalCode">
+        </div>
+        <div class="form-row">
+          <label class="mlabel" for="country">Country</label>
+          <input type="text" id="country">
+        </div>
+        <div class="form-row">
+          <label class="mlabel" for="area">Area</label>
+          <input type="text" id="area">
+        </div>
+        <div class="form-row">
+          <label class="mlabel" for="workPhone">Work Phone</label>
+          <input type="text" id="workPhone">
+          <input type="radio" name="phone-type" checked id="workPhoneType" onclick="phoneBlurHandler()">
+        </div>
+        <div class="form-row">
+          <label class="mlabel" for="homePhone">Home Phone</label>
+          <input type="text" id="homePhone" disabled>
+          <input type="radio" name="phone-type" id="homePhoneType" onclick="phoneBlurHandler()">
+        </div>
+        <div class="form-row">
+          <label class="mlabel" for="mobilePhone">Mobile Phone</label>
+          <input type="text" id="mobilePhone" disabled>
+          <input type="radio" name="phone-type" id="mobilePhoneType" onclick="phoneBlurHandler()">
+        </div>
+        <div class="form-row">
+          <label class="mlabel" for="otherPhone">Other Phone</label>
+          <input type="text" id="otherPhone" disabled>
+          <input type="radio" name="phone-type" id="otherPhoneType" onclick="phoneBlurHandler()">
+        </div>
+        <div class="form-row">
+          <label class="mlabel" for="faxPhone">Fax Phone</label>
+          <input type="text" id="faxPhone" disabled>
+          <input type="radio" name="phone-type" id="faxPhoneType" onclick="phoneBlurHandler()">
+        </div>
+        <div class="form-row">
+          <label class="mlabel" for="email">Email</label>
+          <input type="text" id="email">
+        </div>
+        <div class="form-row">
+          <label class="mlabel" for="url">URL</label>
+          <input type="text" id="url">
+        </div>
+        <div class="form-row">
+          <label class="mlabel" for="notes">Notes</label>
+          <textarea id="notes" cols="30" rows="10"></textarea>
+        </div>
+      </div>
+      <div class="detailed">
+        <div class="d-form-row">
+          <label class="mlabel" for="member">Member</label>
+          <span class="field">
+            <input class="item" type="checkbox" name="member" id="member">
+            <span class="item">
+              <label for="join">Join</label>
+              <input type="datetime-local" id="join">
+            </span>
+            <span class="item">
+              <label for="leave">Leave</label>
+              <input type="datetime-local" id="leave">
+            </span>
+          </span>
+        </div>
+        <div class="d-form-row">
+          <label class="mlabel" for="infoWanted">InfoWanted</label>
+          <span class="field">
+            <span class="item">
+              <input type="checkbox" name="infoWanted" id="newsLetter">
+              <label for="newsLetter">News Letter</label>
+            </span>
+            <span class="item">
+              <input type="checkbox" name="infoWanted" id="opening">
+              <label for="opening">Opening</label>
+            </span>
+          </span>
+        </div>
+        <hr>
+        <div class="d-form-row">
+          <label class="mlabel" for="communicate">Communicate</label>
+          <span class="field">
+            <span class="item">
+              <input type="radio" name="communicate" id="com-fax">
+              <label for="com-fax">Fax</label>
+            </span>
+            <span class="item">
+              <input type="radio" name="communicate" checked id="com-email">
+              <label for="com-email">Email</label>
+            </span>
+            <span class="item">
+              <input type="radio" name="communicate" id="com-mail">
+              <label for="com-mail">Mail</label>
+            </span>
+          </span>
+        </div>
+        <div class="d-form-row">
+          <label class="mlabel" for="traineeLevels">Trainee Levels</label>
+          <span class="field">
+            <span class="item">
+              <input type="checkbox" name="traineeLevels" id="level1">
+              <label for="level1">Level 1</label>
+            </span>
+            <span class="item">
+              <input type="checkbox" name="traineeLevels" id="level2">
+              <label for="level2">Level 2</label>
+            </span>
+            <span class="item">
+              <input type="checkbox" name="traineeLevels" id="level3">
+              <label for="level3">Level 3</label>
+            </span>
+            <span class="item">
+              <input type="checkbox" name="traineeLevels" id="admin">
+              <label for="admin">Admin</label>
+            </span>
+          </span>
+        </div>
+        <hr>
+        <div class="d-form-row">
+          <label class="mlabel">Trainee Details</label>
+          <span class="field"></span>
+        </div>
+        <div class="d-form-row">
+          <label for="associations" class="mlabel">Associations</label>
+          <span class="field">
+            <span class="item">
+              <input type="checkbox" name="associations" id="CPTA">
+              <label for="CPTA">CPTA</label>
+            </span>
+            <span class="item">
+              <input type="checkbox" name="associations" id="CTO">
+              <label for="CTO">CTO</label>
+            </span>
+            <span class="item">
+              <input type="checkbox" name="associations" id="PACT">
+              <label for="PACT">PACT</label>
+            </span>
+          </span>
+        </div>
+        <div class="d-form-row">
+          <label for="roles" class="mlabel">Roles</label>
+          <span class="field" id="roles-field"></span>
+        </div>
+        <hr>
+        <div class="d-form-row">
+          <label for="orgs" class="mlabel">Org Type</label>
+          <span class="field" id="orgs-field"></span>
+        </div>
+        <div class="d-form-row">
+          <label for="events" class="mlabel">Events</label>
+          <span class="field" id="events-field"></span>
+        </div>
+        <hr>
+        <div class="d-form-row">
+          <label for="issues" class="mlabel">Issues</label>
+          <span class="field" id="issues-field"></span>
+        </div>
+        <hr>
+        <div class="d-form-row">
+          <label for="tflOrganizer" class="mlabel">TFL Organizer</label>
+          <span class="field">
+            <input class="item" type="checkbox" name="tflOrganizer" id="tflOrganizer">
+          </span>
+        </div>
+        <div class="d-form-row">
+          <label for="contractDate" class="mlabel">Contract Date</label>
+          <span class="field">
+            <input type="datetime-local" name="" id="contractDate" class="item">
+            <span class="item">
+              <label for="tflDates" class="mlabel">TFL Dates</label>
+              <input type="datetime-local" name="" id="tflDates">
+            </span>
+          </span>
+        </div>
+        <div class="d-form-row">
+          <label for="tflFocus" class="mlabel">TFL Focus</label>
+          <span class="field">
+            <input class="bigtext item" type="text" name="" id="tflFocus">
+          </span>
+        </div>
+        <div class="d-form-row">
+          <label for="tflFee" class="mlabel">TFL Fee</label>
+          <span class="field">
+            <input type="text" name="" id="tflFee" class="item">
+            <span class="item">
+              <label for="counsellor" class="mlabel">Counsellor</label>
+              <input type="checkbox" name="counsellor" id="counsellor">
+              <label for="counsellor">Yes</label>
+            </span>
+          </span>
+        </div>
+        <div class="d-form-row">
+          <label for="facilitator" class="mlabel">Facilitator</label>
+          <span class="field">
+            <input class="bigtext item" type="text" name="" id="facilitator">
+          </span>
+        </div>
+        <div class="d-form-row">
+          <label for="accomodation" class="mlabel">Accommodation</label>
+          <span class="field">
+            <input class="bigtext item" type="text" name="" id="accomodation">
+          </span>
+        </div>
+        <div class="d-form-row">
+          <label class="mlabel" for="status">Status</label>
+          <span class="field">
+            <span class="item">
+              <input type="radio" name="status" checked id="status-potential">
+              <label for="status-potential">Potential</label>
+            </span>
+            <span class="item">
+              <input type="radio" name="status" id="status-confirmed">
+              <label for="status-confirmed">Confirmed</label>
+            </span>
+            <span class="item">
+              <input type="radio" name="status" id="status-done">
+              <label for="status-done">Done</label>
+            </span>
+            <span class="item">
+              <input type="radio" name="status" id="status-cold">
+              <label for="status-cold">Cold</label>
+            </span>
+          </span>
+        </div>
+        <button type="submit">Submit</button>
+      </div>
+    </div>
+  </form>
+</body>
+
+</html>
