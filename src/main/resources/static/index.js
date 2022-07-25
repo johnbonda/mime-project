@@ -8,16 +8,16 @@ window.onload = () => {
 
 }
 
-var parseUrl = () => {
+const parseUrl = () => {
     const queryString = window.location.search;
     console.log(queryString);
-    urlParams = new URLSearchParams(queryString) 
+    const urlParams = new URLSearchParams(queryString) 
     const lastName = urlParams.get("lastName")
     console.log("name is", lastName)
     return lastName
 }
 
-var phoneBlurHandler = () => {
+const phoneBlurHandler = () => {
     const phoneTypes = [
         "workPhone",
         "homePhone",
@@ -26,8 +26,8 @@ var phoneBlurHandler = () => {
         "faxPhone",
     ]
     phoneTypes.forEach(type => {
-        var checked = document.getElementById(type+'Type').checked
-        text = document.getElementById(type)
+        const checked = document.getElementById(type+'Type').checked
+        const text = document.getElementById(type)
         text.disabled = !checked
         if(checked) {
             text.focus()
@@ -35,7 +35,7 @@ var phoneBlurHandler = () => {
     })
 }
 
-var getInitialData = () => {
+const getInitialData = () => {
     let tasks = []
     tasks.push(fetch("api/roles")
     .then(response => {
@@ -102,7 +102,7 @@ var getInitialData = () => {
 }
 
 
-var createBoxes = (type, data) => {
+const createBoxes = (type, data) => {
     data.forEach(dat => {
         const checkboxId = type + '-' + dat.id
         const checkbox = document.createElement("input")
@@ -124,8 +124,8 @@ var createBoxes = (type, data) => {
 }
 
 
-const submitHandler = (e) => {
-    e.preventDefault()
+const submitHandler = (event) => {
+    event.preventDefault()
     const body = {
         firstName: document.getElementById('firstName').value,
         lastName: document.getElementById('lastName').value,
@@ -145,7 +145,7 @@ const submitHandler = (e) => {
         join: document.getElementById('join').value,
         leave: document.getElementById('leave').value,
         infoWanted: getSelectedByName("infoWanted").map(e => e.id),
-        communicate: getSelectedByName("communicate").map(e => e.id.replace('com-', '')).find(e => true),
+        communicate: getSelectedByName("communicate").map(e => e.id.replace('com-', '')).find(_e => true),
         traineeLevels: getSelectedByName("traineeLevels").map(e => e.id),
         associations: getSelectedByName("associations").map(e => e.id),
         roles: getSelectedByName("roles").map(e => parseInt(e.id.replace('roles-', ''))),
@@ -160,10 +160,10 @@ const submitHandler = (e) => {
         facilitator: document.getElementById('facilitator').value,
         accomodation: document.getElementById('accomodation').value,
         counsellor: document.getElementById('counsellor').checked,
-        status: getSelectedByName("status").map(e => e.id.replace('status-', '')).find(e => true),
+        status: getSelectedByName("status").map(e => e.id.replace('status-', '')).find(_e => true),
     }
 
-    var res = getSelectedByName("phone-type")[0].id
+    const res = getSelectedByName("phone-type")[0].id
     body.phone.type = res
     body.phone.value = document.getElementById(res.replace("Type", "")).value
 
@@ -189,7 +189,7 @@ const submitHandler = (e) => {
 }
 
 const getSelectedByName = (name) => {
-    var elements = Array.from(document.getElementsByName(name))
+    const elements = Array.from(document.getElementsByName(name))
     return elements.filter(element => element.checked)
 }
 
@@ -219,7 +219,7 @@ const loadMimeData = lastName => {
         document.getElementById('country').value = mime['country']
         document.getElementById('area').value = mime['area']
 
-        phoneType = document.getElementById(mime['phoneType'])
+        const phoneType = document.getElementById(mime['phoneType'])
         phoneType.checked = true
         document.getElementById(mime['phoneType'].replace("Type", '')).value = mime['phone']
         phoneType.click()
