@@ -1,42 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Mime Home</title>
-  <script src="index.js"></script>
-  <link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theatre DB Home</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-  <a href="/user.html">Add new user</a>
-  <div class="filter-section">
-    <form id="filter-form">
-      <div class="main-filters">
-        <label>Queries:</label>
-        <span class="filter-fields">
-          <button type="button" onclick="addQuery()">Add Query</button>
-          <div class="queries-area" id="queries-area"></div>
-        </span>
-      </div>
-      <div class="main-filters">
-        <label>Roles:</label>
-        <span class="filter-fields">
-          <select name="roles-select" id="roles-select" onchange="roleSelectHandler(this.selectedIndex)">
-            <option value="none" >Select Role</option>
-          </select>
-        </span>
-        <div id="selected-roles"></div>
-      </div>
-      <button type="submit">Search</button>
-    </form>
-  </div>
-  <hr>
-  <div class="result-section">
-    <table id="filter-results" >
-      <caption>Filtered Results</caption>
-      <tr>
-        <th>ID</td>
-        <th>Last Name</td>
-      </tr>
-    </table>
-  </div>
+    <header id="main-header">
+        <div class="container">
+            <img src="images/comedytragedymasks.jpg" alt="Comedy_Tragedy_masks_logo">
+            <h1>Research Project Theatre DB</h1>
+        </div>
+    </header>
+    <nav id="navbar">
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="About.html">About us</a></li>
+                <li><a href="signup.html">Login</a></li>
+                <li><a href="user.html">Register</a></li>
+            </ul>
+        </div>        
+    </nav>
+    <h2><a href="/user.html">Register</a> to become a Member</h2>
+    <h3>Search for Member Data</h3>
+    <div class="filter-section">
+      <form id="filter-form">
+        <div class="main-filters">
+          <label>Queries:</label>
+          <span class="filter-fields">
+            <button type="button" onclick="addQuery()">Add Query</button>
+            <div class="queries-area" id="queries-area"></div>
+          </span>
+        </div>
+        <div class="main-filters">
+          <label>Roles:</label>
+          <span class="filter-fields">
+            <select name="roles-select" id="roles-select" onchange="roleSelectHandler(this.selectedIndex)">
+              <option value="none" >Select Role</option>
+            </select>
+          </span>
+          <div id="selected-roles"></div>
+        </div>
+        <button type="submit">Search</button>
+      </form>
+    </div>
+    <div class="result-section">
+      <table id="filter-results">
+        <caption>Filtered Results</caption>
+        <tr>
+          <th>ID</td>
+          <th>Queried</td>
+        </tr>
+        </table>
+    </div>
+    <div style="margin-top:350px"></div>
+    <footer>
+        <p>Copyright &copy;2022, John Paul.co</p>
+    </footer>
 </body>
 </html>

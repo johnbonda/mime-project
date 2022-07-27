@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup</title>
+    <script src="user.js"></script>
+    <link rel="stylesheet" href="user.css" />
+  </head>
+
+  <body>
+    <form id="mime-form">
+      <div class="container">
+        <div class="basic">
+          <div class="form-row">
+            <label class="mlabel" for="firstName lastName">Full Name</label>
+            <input
+              placeholder="First name"
+              type="text"
+              id="firstName"
+              required
+            />
+            <input placeholder="Last name" type="text" id="lastName" required />
+          </div>
+          <div class="form-row">
+            <label class="mlabel" for="jobTitle">Job title</label>
+            <input type="text" id="jobTitle" />
+          </div>
+          <div class="form-row">
+            <label class="mlabel" for="company">Company</label>
+            <input type="text" id="company" />
+          </div>
+          <div class="form-row">
+            <label class="mlabel" for="address">Address</label>
+            <textarea id="address" cols="30" rows="2"></textarea>
+          </div>
+          <div class="form-row">
+            <label class="mlabel" for="city">City</label>
+            <input type="text" id="city" />
+          </div>
+          <div class="form-row">
+            <label class="mlabel" for="province">Province</label>
+            <input type="text" id="province" />
+          </div>
+          <div class="form-row">
+            <label class="mlabel" for="postalCode">Postal Code</label>
+            <input type="text" id="postalCode" />
+          </div>
+          <div class="form-row">
+            <label class="mlabel" for="country">Country</label>
+            <input type="text" id="country" />
+          </div>
+          <div class="form-row">
+            <label class="mlabel" for="area">Area</label>
+            <input type="text" id="area" />
+          </div>
+          <div class="form-row">
+            <label class="mlabel" for="workPhone">Work Phone</label>
+            <input type="text" id="workPhone" />
+            <input
+              type="radio"
+              name="phone-type"
+              checked
+              id="workPhoneType"
+              onclick="phoneBlurHandler()"
+            />
+          </div>
+          <div class="form-row">
+            <label class="mlabel" for="homePhone">Home Phone</label>
+            <input type="text" id="homePhone" disabled />
+            <input
+              type="radio"
+              name="phone-type"
+              id="homePhoneType"
+              onclick="phoneBlurHandler()"
+            />
+          </div>
+          <div class="form-row">
+            <label class="mlabel" for="mobilePhone">Mobile Phone</label>
+            <input type="text" id="mobilePhone" disabled />
+            <input
+              type="radio"
+              name="phone-type"
+              id="mobilePhoneType"
+              onclick="phoneBlurHandler()"
+            />
+          </div>
+          <div class="form-row">
+            <label class="mlabel" for="otherPhone">Other Phone</label>
+            <input type="text" id="otherPhone" disabled />
+            <input
+              type="radio"
+              name="phone-type"
+              id="otherPhoneType"
+              onclick="phoneBlurHandler()"
+            />
+          </div>
+          <div class="form-row">
+            <label class="mlabel" for="faxPhone">Fax Phone</label>
+            <input type="text" id="faxPhone" disabled />
+            <input
+              type="radio"
+              name="phone-type"
+              id="faxPhoneType"
+              onclick="phoneBlurHandler()"
+            />
+          </div>
+          <div class="form-row">
+            <label class="mlabel" for="email">Email</label>
+            <input type="text" id="email" />
+          </div>
+          <div class="form-row">
+            <label class="mlabel" for="url">URL</label>
+            <input type="text" id="url" />
+          </div>
+          <div class="form-row">
+            <label class="mlabel" for="notes">Notes</label>
+            <textarea id="notes" cols="30" rows="10"></textarea>
+          </div>
+          <button type="submit">Submit</button>
+        </div>
+        
+      </div>
+      
+    </form>
+  </body>
+</html>
