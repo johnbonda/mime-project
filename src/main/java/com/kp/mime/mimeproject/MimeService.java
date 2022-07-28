@@ -77,14 +77,6 @@ public class MimeService {
         mimeDetails.setOrgs(organizationRepository.findByIdIn(mimeDTO.getOrgs()));
         mimeDetails.setEvents(eventRepository.findByIdIn(mimeDTO.getEvents()));
         mimeDetails.setIssues(issueRepository.findByIdIn(mimeDTO.getIssues()));
-        mimeDetails.setTflOrganizer(mimeDTO.isTflOrganizer());
-        mimeDetails.setContractDate(mimeDTO.getContractDate());
-        mimeDetails.setTflDates(mimeDTO.getTflDates());
-        mimeDetails.setTflFocus(mimeDTO.getTflFocus());
-        mimeDetails.setTflFee(mimeDTO.getTflFee());
-        mimeDetails.setFacilitator(mimeDTO.getFacilitator());
-        mimeDetails.setAccomodation(mimeDTO.getAccomodation());
-        mimeDetails.setCounsellor(mimeDTO.isCounsellor());
         mimeDetails.setBenefits(mimeDTO.getBenefits());
         mimeDetails.setStatus(mimeDTO.getStatus());
 

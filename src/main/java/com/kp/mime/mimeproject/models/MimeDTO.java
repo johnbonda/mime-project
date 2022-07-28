@@ -31,14 +31,6 @@ public class MimeDTO {
     private List<Integer> orgs;
     private List<Integer> events;
     private List<Integer> issues;
-    private boolean tflOrganizer;
-    private LocalDateTime contractDate;    
-    private LocalDateTime tflDates;    
-    private String tflFocus;    
-    private String tflFee;    
-    private String facilitator;    
-    private String accomodation;    
-    private boolean counsellor;
     private List<String> benefits;
     private String status;
 
@@ -192,54 +184,6 @@ public class MimeDTO {
     }
     public void setIssues(List<Integer> issues) {
         this.issues = issues;
-    }
-    public boolean isTflOrganizer() {
-        return tflOrganizer;
-    }
-    public void setTflOrganizer(boolean tflOrganizer) {
-        this.tflOrganizer = tflOrganizer;
-    }
-    public LocalDateTime getContractDate() {
-        return contractDate;
-    }
-    public void setContractDate(LocalDateTime contractDate) {
-        this.contractDate = contractDate;
-    }
-    public LocalDateTime getTflDates() {
-        return tflDates;
-    }
-    public void setTflDates(LocalDateTime tflDates) {
-        this.tflDates = tflDates;
-    }
-    public String getTflFocus() {
-        return tflFocus;
-    }
-    public void setTflFocus(String tflFocus) {
-        this.tflFocus = tflFocus;
-    }
-    public String getTflFee() {
-        return tflFee;
-    }
-    public void setTflFee(String tflFee) {
-        this.tflFee = tflFee;
-    }
-    public String getFacilitator() {
-        return facilitator;
-    }
-    public void setFacilitator(String facilitator) {
-        this.facilitator = facilitator;
-    }
-    public String getAccomodation() {
-        return accomodation;
-    }
-    public void setAccomodation(String accomodation) {
-        this.accomodation = accomodation;
-    }
-    public boolean isCounsellor() {
-        return counsellor;
-    }
-    public void setCounsellor(boolean counsellor) {
-        this.counsellor = counsellor;
     }
     public String getStatus() {
         return status;

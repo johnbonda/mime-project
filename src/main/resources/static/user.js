@@ -152,14 +152,6 @@ const submitHandler = (event) => {
         orgs: getSelectedByName("orgs").map(e => parseInt(e.id.replace('orgs-', ''))),
         events: getSelectedByName("events").map(e => parseInt(e.id.replace('events-', ''))),
         issues: getSelectedByName("issues").map(e => parseInt(e.id.replace('issues-', ''))),
-        tflOrganizer: document.getElementById('tflOrganizer').checked,
-        contractDate: document.getElementById('contractDate').value,
-        tflDates: document.getElementById('tflDates').value,
-        tflFocus: document.getElementById('tflFocus').value,
-        tflFee: document.getElementById('tflFee').value,
-        facilitator: document.getElementById('facilitator').value,
-        accomodation: document.getElementById('accomodation').value,
-        counsellor: document.getElementById('counsellor').checked,
         benefits: getSelectedByName("benefits").map(e => e.id),
         status: getSelectedByName("status").map(e => e.id.replace('status-', '')).find(_e => true),
     }
@@ -251,14 +243,6 @@ const loadMimeData = lastName => {
         tickBoxes("orgs-", mimeDetails['orgs'].map(org => org['id']))
         tickBoxes("events-", mimeDetails['events'].map(event => event['id']))
         tickBoxes("issues-", mimeDetails['issues'].map(issue => issue['id']))
-        document.getElementById('tflOrganizer').checked = mimeDetails['tflOrganizer']
-        document.getElementById('contractDate').value = mimeDetails['contractDate']
-        document.getElementById('tflDates').value = mimeDetails['tflDates']
-        document.getElementById('tflFocus').value = mimeDetails['tflFocus']
-        document.getElementById('tflFee').value = mimeDetails['tflFee']
-        document.getElementById('facilitator').value = mimeDetails['facilitator']
-        document.getElementById('accomodation').value = mimeDetails['accomodation']
-        document.getElementById('counsellor').checked = mimeDetails['counsellor']
         tickBoxes("", mimeDetails['benefits'])
         document.getElementById('status-' + mimeDetails['status']).checked = true
         

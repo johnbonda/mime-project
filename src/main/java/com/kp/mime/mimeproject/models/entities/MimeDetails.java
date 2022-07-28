@@ -55,16 +55,6 @@ public class MimeDetails {
     @ManyToMany
     private List<Issue> issues;
 
-    private boolean tflOrganizer;
-
-    private LocalDateTime contractDate;
-    private LocalDateTime tflDates;
-    private String tflFocus;
-    private String tflFee;
-    private boolean counsellor;
-    private String facilitator;
-    private String accomodation;
-
     @ElementCollection
     @CollectionTable
     private List<String> benefits;
@@ -173,70 +163,6 @@ public class MimeDetails {
 
     public void setIssues(List<Issue> issues) {
         this.issues = issues;
-    }
-
-    public boolean isTflOrganizer() {
-        return tflOrganizer;
-    }
-
-    public void setTflOrganizer(boolean tflOrganizer) {
-        this.tflOrganizer = tflOrganizer;
-    }
-
-    public LocalDateTime getContractDate() {
-        return contractDate;
-    }
-
-    public void setContractDate(LocalDateTime contractDate) {
-        this.contractDate = contractDate;
-    }
-
-    public LocalDateTime getTflDates() {
-        return tflDates;
-    }
-
-    public void setTflDates(LocalDateTime tflDates) {
-        this.tflDates = tflDates;
-    }
-
-    public String getTflFocus() {
-        return tflFocus;
-    }
-
-    public void setTflFocus(String tflFocus) {
-        this.tflFocus = tflFocus;
-    }
-
-    public String getTflFee() {
-        return tflFee;
-    }
-
-    public void setTflFee(String tflFee) {
-        this.tflFee = tflFee;
-    }
-
-    public boolean isCounsellor() {
-        return counsellor;
-    }
-
-    public void setCounsellor(boolean counsellor) {
-        this.counsellor = counsellor;
-    }
-
-    public String getFacilitator() {
-        return facilitator;
-    }
-
-    public void setFacilitator(String facilitator) {
-        this.facilitator = facilitator;
-    }
-
-    public String getAccomodation() {
-        return accomodation;
-    }
-
-    public void setAccomodation(String accomodation) {
-        this.accomodation = accomodation;
     }
 
     public String getStatus() {
