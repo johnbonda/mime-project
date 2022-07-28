@@ -9,7 +9,6 @@ const stateData = {
         "city",
         "province",
         "country",
-        "area",
         "phone",
         "phoneType",
         "email",

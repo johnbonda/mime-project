@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member search</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header id="main-header">
+        <div class="container">
+            <a href="index.html">
+                <img src="images/comedytragedymasks.jpg" alt="Comedy_Tragedy_masks_logo">
+            </a>
+            <h1>Research Project Theatre DB</h1>
+        </div>
+    </header>
+    <h2>Search for Member Data</h2>
+    <div class="filter-section">
+      <form id="filter-form">
+        <div class="main-filters">
+          <label>Queries:</label>
+          <span class="filter-fields">
+            <button type="button" onclick="addQuery()">Add Query</button>
+            <div class="queries-area" id="queries-area"></div>
+          </span>
+        </div>
+        <div class="main-filters">
+          <label>Roles:</label>
+          <span class="filter-fields">
+            <select name="roles-select" id="roles-select" onchange="roleSelectHandler(this.selectedIndex)">
+              <option value="none" >Select Role</option>
+            </select>
+          </span>
+          <div id="selected-roles"></div>
+        </div>
+        <button type="submit">Search</button>
+      </form>
+    </div>
+    <div class="result-section">
+      <table id="filter-results">
+        <caption>Filtered Results</caption>
+        <tr>
+          <th>ID</td>
+          <th>Queried</td>
+        </tr>
+        </table>
+    </div>
+    <div style="margin-top:350px"></div>
+</body>
+</html>

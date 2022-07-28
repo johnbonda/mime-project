@@ -217,8 +217,6 @@ const loadMimeData = lastName => {
         document.getElementById('province').value = mime['province']
         document.getElementById('postalCode').value = mime['postalCode']
         document.getElementById('country').value = mime['country']
-        document.getElementById('area').value = mime['area']
-
         const phoneType = document.getElementById(mime['phoneType'])
         phoneType.checked = true
         document.getElementById(mime['phoneType'].replace("Type", '')).value = mime['phone']

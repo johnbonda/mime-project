@@ -3,6 +3,7 @@ img{
     float: left;
 }
 #main-header{
+    background-color: orangered;
     height: auto;
     font-size: 22px ;
 }
