@@ -141,7 +141,7 @@ const submitHandler = (event) => {
         email: document.getElementById('email').value,
         url: document.getElementById('url').value,
         notes: document.getElementById('notes').value,
-        member: document.getElementById('member').checked,
+        dob: null,
         join: document.getElementById('join').value,
         leave: document.getElementById('leave').value,
         infoWanted: getSelectedByName("infoWanted").map(e => e.id),
@@ -160,7 +160,13 @@ const submitHandler = (event) => {
         facilitator: document.getElementById('facilitator').value,
         accomodation: document.getElementById('accomodation').value,
         counsellor: document.getElementById('counsellor').checked,
+        benefits: getSelectedByName("benefits").map(e => e.id),
         status: getSelectedByName("status").map(e => e.id.replace('status-', '')).find(_e => true),
+    }
+
+    const dobVal = document.getElementById('dob').value
+    if(dobVal) { 
+        body.dob = new Date(dobVal).toISOString()
     }
 
     const res = getSelectedByName("phone-type")[0].id
@@ -225,8 +231,16 @@ const loadMimeData = lastName => {
         document.getElementById('email').value = mime['email']
         document.getElementById('url').value = mime['url']
         document.getElementById('notes').value = mime['notes']
-        document.getElementById('member').checked = mimeDetails['member']
         document.getElementById('join').value = mimeDetails['joinDate']
+
+        if(mimeDetails['dob']) {
+            let yourDate = new Date(mimeDetails['dob'])
+            const offset = yourDate.getTimezoneOffset()
+            yourDate = new Date(yourDate.getTime() - (offset*60*1000))
+            document.getElementById('dob').value = yourDate.toISOString().split('T')[0]
+        }
+
+        // document.getElementById('dob').value = new Date(mimeDetails['dob']).toISOString().split('T')[0]
         document.getElementById('leave').value = mimeDetails['leaveDate']
 
         tickBoxes("", mimeDetails['infoWanted'])
@@ -245,6 +259,7 @@ const loadMimeData = lastName => {
         document.getElementById('facilitator').value = mimeDetails['facilitator']
         document.getElementById('accomodation').value = mimeDetails['accomodation']
         document.getElementById('counsellor').checked = mimeDetails['counsellor']
+        tickBoxes("", mimeDetails['benefits'])
         document.getElementById('status-' + mimeDetails['status']).checked = true
         
         console.log('loadedData')

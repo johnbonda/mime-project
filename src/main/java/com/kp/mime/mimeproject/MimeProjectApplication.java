@@ -49,17 +49,20 @@ public class MimeProjectApplication {
 		if(roleRepository.count() == 0) {
 			log.info("Adding roles");
 			List<Role> roles = Arrays.asList(
-				new Role("Board Member"),
+				new Role("Elder"),
 				new Role("Donor"),
 				new Role("Funder"),
-				new Role("Network"),
+				new Role("Counsellor"),
 				new Role("Participant"),
 				new Role("Politician-Federal"),
 				new Role("Politician-Provincial"),
 				new Role("Politician-Municipal"),
 				new Role("Volunteer"),
-				new Role("Webcast"),
-				new Role("Supplier")
+				new Role("Researcher"),
+				new Role("Musician"),
+				new Role("Actor"),
+				new Role("Supplier"),
+				new Role("Other")
 			);
 			roleRepository.saveAll(roles);
 		}
@@ -85,7 +88,10 @@ public class MimeProjectApplication {
 				new Organization("Community"),
 				new Organization("Environment"),
 				new Organization("PRESS RELEASE"),
-				new Organization("UofA FoMD")
+				new Organization("NFP"),
+				new Organization("Charity"),
+				new Organization("Festival"),
+				new Organization("Other")
 			);
 			organizationRepository.saveAll(organizations);
 		}

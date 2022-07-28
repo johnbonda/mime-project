@@ -19,6 +19,7 @@ public class MimeDTO {
     private String email;    
     private String url;    
     private String notes;    
+    private LocalDateTime dob;    
     private boolean member;
     private LocalDateTime join;    
     private LocalDateTime leave;    
@@ -38,8 +39,10 @@ public class MimeDTO {
     private String facilitator;    
     private String accomodation;    
     private boolean counsellor;
+    private List<String> benefits;
     private String status;
 
+    
     public String getFirstName() {
         return firstName;
     }
@@ -244,5 +247,18 @@ public class MimeDTO {
     public void setStatus(String status) {
         this.status = status;
     }
+    public LocalDateTime getDob() {
+        return dob;
+    }
+    public void setDob(LocalDateTime dob) {
+        this.dob = dob;
+    }
+    public List<String> getBenefits() {
+        return benefits;
+    }
+    public void setBenefits(List<String> benefits) {
+        this.benefits = benefits;
+    }
+
 
 }

@@ -24,6 +24,7 @@ public class MimeDetails {
     @JsonIgnore
     private Mime mime;
 
+    private LocalDateTime dob;
     private boolean member;
     private LocalDateTime joinDate;
     private LocalDateTime leaveDate;
@@ -63,6 +64,11 @@ public class MimeDetails {
     private boolean counsellor;
     private String facilitator;
     private String accomodation;
+
+    @ElementCollection
+    @CollectionTable
+    private List<String> benefits;
+
     private String status;
 
     public int getId() {
@@ -239,6 +245,22 @@ public class MimeDetails {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public LocalDateTime getDob() {
+        return dob;
+    }
+
+    public void setDob(LocalDateTime dob) {
+        this.dob = dob;
+    }
+
+    public List<String> getBenefits() {
+        return benefits;
+    }
+
+    public void setBenefits(List<String> benefits) {
+        this.benefits = benefits;
     }
 
     

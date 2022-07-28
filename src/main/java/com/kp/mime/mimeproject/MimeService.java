@@ -64,6 +64,7 @@ public class MimeService {
         mime.setNotes(mimeDTO.getNotes());
 
         MimeDetails mimeDetails = mime.getMimeDetails();
+        mimeDetails.setDob(mimeDTO.getDob());
         mimeDetails.setMember(mimeDTO.isMember());
         mimeDetails.setJoinDate(mimeDTO.getJoin());
         mimeDetails.setLeaveDate(mimeDTO.getLeave());
@@ -84,6 +85,7 @@ public class MimeService {
         mimeDetails.setFacilitator(mimeDTO.getFacilitator());
         mimeDetails.setAccomodation(mimeDTO.getAccomodation());
         mimeDetails.setCounsellor(mimeDTO.isCounsellor());
+        mimeDetails.setBenefits(mimeDTO.getBenefits());
         mimeDetails.setStatus(mimeDTO.getStatus());
 
         mimeRepository.save(mime);
