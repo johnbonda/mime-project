@@ -99,36 +99,27 @@ public class MimeProjectApplication {
 		if(eventRepository.count() == 0) {
 			log.info("Adding events");
 			List<Event> events = Arrays.asList(
-				new Event("2º"),
-				new Event("ARRANGED"),
-				new Event("LENS"),
-				new Event("Corps I/O Heads"),
-				new Event("CU"),
-				new Event("CIH(BC)"),
-				new Event("DSW"),
-				new Event("FIRE"),
-				new Event("GENDER"),
-				new Event("GENERATIONS"),
-				new Event("HERE & NOW"),
-				new Event("HOMELESSNESS"),
-				new Event("MAMU"),
-				new Event("METH"),
-				new Event("MALADJUSTED"),
-				new Event("MALADJUSTED TOUR"),
-				new Event("SHATTERING (meth)"),
-				new Event("No `Xya`"),
-				new Event("OOTS"),
-				new Event("PD"),
-				new Event("REACH"),
-				new Event("Rec. Hope"),
-				new Event("ROS"),
-				new Event("SAFER"),
-				new Event("SQEEGEE"),
-				new Event("$x*?amat"),
-				new Event("$x*? TOUR"),
-				new Event("TDG"),
-				new Event("THIR$TY"),
-				new Event("US & THEM")
+				new Event("Kun'tewiktuk"),
+				new Event("Neighbours Workshop"),
+				new Event("Voices for Change Workshop"),
+				new Event("Who You Gonna Call?"),
+				new Event("Paths Less Travelled"),
+				new Event("Neighbours"),
+				new Event("Gender Change Room"),
+				new Event("Voices for Change"),
+				new Event("The Rover"),
+				new Event("Bear Witness"),
+				new Event("Grease"),
+				new Event("Ovation"),
+				new Event("The Happy Prince"),
+				new Event("Hamlet"),
+				new Event("The Bells of Baddeck"),
+				new Event("Twelfth Night"),
+				new Event("Macbeth"),
+				new Event("Romeo and Juliet"),
+				new Event("Cyrano de Bergerac"),
+				new Event("Please Do Not Touch the Mi’kmaq")
+				
 			);
 			eventRepository.saveAll(events);
 		}
@@ -136,21 +127,12 @@ public class MimeProjectApplication {
 		if(issueRepository.count() == 0) {
 			log.info("Adding issues");
 			List<Issue> issues = Arrays.asList(
-				new Issue("Addiction"),
-				new Issue("Anti-Racism"),
-				new Issue("Conflict-Res"),
-				new Issue("Environment"),
-				new Issue("First Nations"),
-				new Issue("Gender Roles"),
-				new Issue("Globalization"),
-				new Issue("Health"),
-				new Issue("Intergenerational"),
-				new Issue("Multiculturalism"),
-				new Issue("Poverty"),
-				new Issue("Violence-Schools"),
-				new Issue("Violence-Family"),
-				new Issue("Wellness"),
-				new Issue("Youth")
+				new Issue("Women/Gender"),
+				new Issue("Queer/Trans"),
+				new Issue("Gender and Sexuality"),
+				new Issue("Environment/Climate"),
+				new Issue("Indigenous Community")
+				
 			);
 			issueRepository.saveAll(issues);
 		}
