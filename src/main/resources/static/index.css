@@ -37,10 +37,10 @@ img {
 }
 
 .footer a:visited {
-  color: #333;
+  color: white;
 }
 .footer a:hover {
-  color: white;
+  color: black;
 }
 
 * {
@@ -89,10 +89,19 @@ th {
 }
 
 .footer {
-  margin: 5px;
+  margin: 0px;
   padding: 15px;
   background-color: green;
+  color: white;
+  
 }
+
+
+.footer li{
+  display: inline;
+  padding-right: 5px;
+}
+
 .registerbutton {
   padding: 4px;
   background-color: gold;
