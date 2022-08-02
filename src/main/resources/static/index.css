@@ -14,7 +14,12 @@ img {
 }
 .container {
   text-align: center;
-  width: 80%;
+  /* width: 80%; */
+}
+
+.containerh {
+  text-align: center;
+  width: 90%;
 }
 
 #navbar {
@@ -45,7 +50,7 @@ img {
 
 * {
   box-sizing: border-box;
-  margin: auto;
+  margin: 0px;
 }
 
 .filter-section {
@@ -88,11 +93,13 @@ th {
   margin-right: auto;
 }
 
-.footer {
-  margin: 0px;
-  padding: 15px;
+footer {
+  /* padding-bottom: 20px; */
   background-color: green;
   color: white;
+  height: fit-content;
+  /* float: left; */
+  
   
 }
 
@@ -116,6 +123,7 @@ th {
 
 .copy {
   text-align: center;
+ 
 }
 
 .button {
@@ -139,3 +147,29 @@ th {
   height: 300px;
   width: 100%;
 }
+
+.fblock1{
+  float: left;
+  padding: 10px;
+  width: 30%;
+  box-sizing: border-box;
+  background-color: green; 
+}
+
+.fblock2{
+  margin: px;
+  float: right;
+  padding: 10px;
+  width: 70%;
+  box-sizing: border-box;
+  background-color: green; 
+}
+
+/* .fblock1{
+  width: 30%;
+  float:left
+}
+.fblock2{
+  width: 70%;
+  float: right;
+} */
